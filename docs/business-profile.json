@@ -1,0 +1,214 @@
+{
+  "businessName": {
+    "value": "Mojo Cleaning",
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/ (Header, Hero, Title, Footer)",
+    "verifiedDate": "2026-10-25"
+  },
+  "legalName": {
+    "value": "Mojo Cleaning LLC",
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/privacy-policy & /terms-and-conditions",
+    "verifiedDate": "2026-10-25"
+  },
+  "domain": {
+    "value": "https://mojocleaningservice.com",
+    "status": "verified",
+    "source": "Live HTTPS production origin behind Cloudflare CDN",
+    "verifiedDate": "2026-10-25"
+  },
+  "preferredHostname": {
+    "value": "mojocleaningservice.com",
+    "status": "verified",
+    "source": "Canonical link tag on https://mojocleaningservice.com/",
+    "verifiedDate": "2026-10-25"
+  },
+  "telephoneDisplay": {
+    "value": "(256) 418-8199",
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/ & /Contact_us & /privacy-policy",
+    "verifiedDate": "2026-10-25",
+    "notes": "Supports both voice calls and SMS text inquiries."
+  },
+  "telephoneHref": {
+    "value": "tel:+12564188199",
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/",
+    "verifiedDate": "2026-10-25"
+  },
+  "telephoneE164": {
+    "value": "+1-256-418-8199",
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/",
+    "verifiedDate": "2026-10-25"
+  },
+  "email": {
+    "value": "hello@mojocleaningservice.com",
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/ & /Contact_us & /privacy-policy",
+    "verifiedDate": "2026-10-25"
+  },
+  "emailHref": {
+    "value": "mailto:hello@mojocleaningservice.com",
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/",
+    "verifiedDate": "2026-10-25"
+  },
+  "operatingAddressPolicy": {
+    "value": "Operates as an on-site residential Service-Area Business (SAB) based in Huntsville, Alabama. No public walk-in street address is published; teams travel directly to customer homes.",
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/privacy-policy (\"Huntsville, Alabama\")",
+    "verifiedDate": "2026-10-25",
+    "notes": "Per strict accuracy rules, no street address is invented."
+  },
+  "primaryCity": {
+    "value": "Huntsville",
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/",
+    "verifiedDate": "2026-10-25"
+  },
+  "primaryState": {
+    "value": "Alabama",
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/",
+    "verifiedDate": "2026-10-25"
+  },
+  "primaryCounty": {
+    "value": "Madison County",
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/ (\"Huntsville, Madison, and surrounding Madison County areas\")",
+    "verifiedDate": "2026-10-25"
+  },
+  "businessHours": {
+    "value": {
+      "weekdays": "Monday – Friday: 8:00 AM – 6:00 PM",
+      "saturday": "Saturday: Cleaning by appointment",
+      "sunday": "Sunday: Closed",
+      "schemaOpeningHours": [
+        "Mo-Fr 08:00-18:00"
+      ]
+    },
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/Contact_us (routes-DMe07cbf.js)",
+    "verifiedDate": "2026-10-25"
+  },
+  "verifiedServices": {
+    "value": [
+      "Recurring Cleaning",
+      "Deep Cleaning",
+      "Move-In Cleaning",
+      "Move-Out Cleaning",
+      "Post-Construction Cleaning"
+    ],
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/ & /cleaning-checklist",
+    "verifiedDate": "2026-10-25"
+  },
+  "verifiedServiceAreas": {
+    "value": [
+      "Huntsville, AL",
+      "Madison, AL",
+      "Hampton Cove, AL",
+      "Owens Cross Roads, AL",
+      "Athens, AL"
+    ],
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/ (Hero, About, Service Areas, Meta Description)",
+    "verifiedDate": "2026-10-25"
+  },
+  "quoteFormIntegration": {
+    "value": {
+      "provider": "LeadConnector / GoHighLevel",
+      "formId": "LMshydq3SzEFJgOrXehA",
+      "formName": "Mojo WebSite Form Template",
+      "embedUrl": "https://api.leadconnectorhq.com/widget/form/LMshydq3SzEFJgOrXehA",
+      "scriptUrl": "https://link.msgsndr.com/js/form_embed.js",
+      "prefillQueryKeys": {
+        "firstName": "name",
+        "lastName": "last_name",
+        "phone": "phone",
+        "email": "email",
+        "cleaningType": "type_of_cleaning_(meta)"
+      }
+    },
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/assets/GhlFormEmbed-DtbQJ0Wg.js",
+    "verifiedDate": "2026-10-25"
+  },
+  "guaranteesAndPolicies": {
+    "value": {
+      "happinessGuaranteeHours": 48,
+      "happinessGuaranteeTitle": "48-Hour Happiness Guarantee",
+      "happinessGuaranteePolicy": "If any area on your checklist is missed or you are not completely satisfied, contact Mojo Cleaning within 48 hours of service completion and our team will return to re-clean the affected area at no extra cost.",
+      "insuredAndBonded": true,
+      "backgroundCheckedStaff": true,
+      "suppliesAndEquipmentProvided": true,
+      "ecoFriendlyAvailableOnRequest": true,
+      "customizableRoomChecklist": true
+    },
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/ & /cleaning-checklist & /terms-and-conditions",
+    "verifiedDate": "2026-10-25"
+  },
+  "socialProfiles": {
+    "value": [],
+    "status": "needs_verification",
+    "source": "Audited https://mojocleaningservice.com/ HTML & JS bundles; no social URLs linked on official site",
+    "verifiedDate": "2026-10-25",
+    "notes": "Omitted from footer and Schema sameAs until official profile URLs are confirmed by owner."
+  },
+  "aggregateRatingClaim": {
+    "value": null,
+    "status": "needs_verification",
+    "source": "Official site publishes 3 verified client testimonials but no third-party review count",
+    "verifiedDate": "2026-10-25",
+    "notes": "No AggregateRating schema or unverified review count is published."
+  },
+  "legacyUrlPreservation": {
+    "value": [
+      {
+        "legacyPath": "/cleaning-checklist",
+        "destinationPath": "/huntsville-al/checklist/",
+        "reason": "Preserves search equity and bookmarks from previous /cleaning-checklist route"
+      },
+      {
+        "legacyPath": "/Contact_us",
+        "destinationPath": "/huntsville-al/contact/",
+        "reason": "Normalizes legacy mixed-case /Contact_us route to canonical Huntsville contact page"
+      },
+      {
+        "legacyPath": "/terms-and-conditions",
+        "destinationPath": "/terms/",
+        "reason": "Preserves legacy /terms-and-conditions URL while supporting canonical /terms/"
+      },
+      {
+        "legacyPath": "/about/",
+        "destinationPath": "/huntsville-al/about/",
+        "reason": "Migrates legacy global /about/ route to primary Huntsville location experience"
+      },
+      {
+        "legacyPath": "/services/",
+        "destinationPath": "/huntsville-al/services/",
+        "reason": "Migrates legacy global /services/ route to primary Huntsville location experience"
+      },
+      {
+        "legacyPath": "/reviews/",
+        "destinationPath": "/huntsville-al/reviews/",
+        "reason": "Migrates legacy global /reviews/ route to primary Huntsville location experience"
+      },
+      {
+        "legacyPath": "/faqs/",
+        "destinationPath": "/huntsville-al/faqs/",
+        "reason": "Migrates legacy global /faqs/ route to primary Huntsville location experience"
+      },
+      {
+        "legacyPath": "/contact/",
+        "destinationPath": "/huntsville-al/contact/",
+        "reason": "Migrates legacy global /contact/ route to primary Huntsville location experience"
+      }
+    ],
+    "status": "verified",
+    "source": "https://mojocleaningservice.com/assets/routes-DMe07cbf.js",
+    "verifiedDate": "2026-10-25"
+  }
+}

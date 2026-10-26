@@ -1,0 +1,44 @@
+{
+  "auditDate": "2026-10-25",
+  "accountAccessStatus": "requires_owner_authorization",
+  "accountAccessNote": "Direct Google Business Profile dashboard access requires owner/manager authorization in Google Business Profile Manager. Do not assume website changes alone resolve any profile-level verification or suspension state.",
+  "verifiedNapConfiguration": {
+    "businessName": "Mojo Cleaning",
+    "legalEntityName": "Mojo Cleaning LLC",
+    "namePolicyRule": "Use the exact real-world business name (\"Mojo Cleaning\"). Never stuff cities or keywords (e.g., \"Mojo Cleaning Huntsville Deep Cleaning\") into the GBP business name.",
+    "primaryPhone": "(256) 418-8199",
+    "primaryWebsiteUrl": "https://mojocleaningservice.com/",
+    "businessModel": "Service-Area Business (SAB) — Mobile residential cleaning teams travel to client homes",
+    "addressDisplayRule": "Because Mojo Cleaning dispatches mobile teams to customer residences rather than serving walk-in customers at a retail storefront, configure GBP as a Service-Area Business (hide street address if no staffed customer-facing signage exists) and never create fake branch profiles in Madison, Hampton Cove, Owens Cross Roads, or Athens.",
+    "primaryCategory": "House cleaning service",
+    "recommendedAdditionalCategories": [
+      "Cleaning service"
+    ],
+    "verifiedServiceAreas": [
+      "Huntsville, AL, USA",
+      "Madison, AL, USA",
+      "Hampton Cove, Huntsville, AL, USA",
+      "Owens Cross Roads, AL, USA",
+      "Athens, AL, USA"
+    ],
+    "verifiedHours": {
+      "mondayToFriday": "08:00 - 18:00",
+      "saturday": "By appointment (confirm exact GBP saturday toggle with owner)",
+      "sunday": "Closed"
+    }
+  },
+  "statusRemediationProtocol": [
+    {
+      "status": "Verified & Active",
+      "action": "Audit NAP consistency, confirm primary category (\"House cleaning service\"), populate all 5 verified service areas, add the 5 core services with 37/47/56-point descriptions, upload authentic team-in-action photos, and respond to all reviews within 24–48 hours."
+    },
+    {
+      "status": "Pending Verification",
+      "action": "Complete Google’s official video or document verification showing official Mojo Cleaning LLC registration, branded equipment/uniforms, and work vehicle/dispatch readiness."
+    },
+    {
+      "status": "Suspended or Disabled",
+      "action": "Inspect the exact policy notice in GBP Appeals tool, ensure the business name has zero keyword stuffing, ensure the street address is hidden if operating as a residential-origin SAB, gather official Alabama LLC registration + utility/insurance documentation, and submit a single official reinstatement appeal. Never create duplicate profiles."
+    }
+  ]
+}

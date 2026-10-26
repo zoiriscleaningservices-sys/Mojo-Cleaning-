@@ -1,0 +1,422 @@
+{
+  "generatedAt": "2026-10-25",
+  "competitorsObserved": [
+    {
+      "id": "two-maids-huntsville",
+      "name": "Two Maids (Huntsville)",
+      "domain": "twomaidscleaning.com",
+      "businessType": "national_franchise",
+      "citiesObserved": [
+        "huntsville-al",
+        "madison-al",
+        "hampton-cove-al",
+        "owens-cross-roads-al"
+      ],
+      "queryCategoriesObserved": [
+        "house cleaning Huntsville AL",
+        "cleaning service Huntsville Alabama",
+        "house cleaning Hampton Cove AL"
+      ],
+      "observationDate": "2026-10-25",
+      "searchEnvironment": "Google Organic & Local Pack / Maps (US - Alabama)",
+      "apparentStrengths": [
+        "Physical commercial office address in Huntsville (2225 Drake Ave SW) supporting Huntsville Maps proximity",
+        "High national domain authority and established franchise review volume",
+        "Clear messaging that supplies and equipment are included"
+      ],
+      "verifiedWeaknesses": [
+        "Franchise template copy shared across hundreds of U.S. franchise locations",
+        "Suburban communities (Hampton Cove, Owens Cross Roads) are listed as secondary bullet points rather than having isolated, full-featured local experiences",
+        "Lacks an interactive, side-by-side 37/47/56-point task comparison table with explicit exclusions on every local service page"
+      ],
+      "contentGaps": [
+        "No neighborhood-specific preparation checklists for historic Huntsville homes vs. new-build subdivisions",
+        "No transparent pricing-factor matrix explaining how square footage, pets, and buildup affect quotes"
+      ],
+      "mojoDifferentiationAdvantage": "Mojo Cleaning provides a strictly isolated 13-page local experience per community, a transparent 56-point room-by-room comparison table, and direct local accountability without national franchise scripting."
+    },
+    {
+      "id": "the-cleaning-authority-huntsville",
+      "name": "The Cleaning Authority - Huntsville",
+      "domain": "thecleaningauthority.com",
+      "businessType": "national_franchise",
+      "citiesObserved": [
+        "huntsville-al",
+        "madison-al"
+      ],
+      "queryCategoriesObserved": [
+        "house cleaning Huntsville AL",
+        "recurring house cleaning Madison AL",
+        "residential cleaning Huntsville AL"
+      ],
+      "observationDate": "2026-10-25",
+      "searchEnvironment": "Google Organic & Local Pack (US - Alabama)",
+      "apparentStrengths": [
+        "Strong domain authority and recognizable branded \"Detail-Clean Rotation System\"",
+        "Addresses regional seasonal pollen and dust in general marketing copy"
+      ],
+      "verifiedWeaknesses": [
+        "Rotational cleaning model rotates deep-cleaning tasks across visits rather than delivering a clear, static 37-point or 47-point scope every time",
+        "National corporate template structure mixes nearby cities in footer/sidebar links"
+      ],
+      "contentGaps": [
+        "Does not publish dedicated post-construction or empty-home 56-point turnover guides tailored to Madison and Owens Cross Roads builders/landlords"
+      ],
+      "mojoDifferentiationAdvantage": "Mojo Cleaning allows homeowners to choose an exact 37-point Standard or 47-point Deep checklist for their entire active home on visit one—plus 100% custom room skipping."
+    },
+    {
+      "id": "molly-maid-huntsville-decatur-athens",
+      "name": "Molly Maid of Huntsville, Decatur and Athens",
+      "domain": "mollymaid.com",
+      "businessType": "national_franchise",
+      "citiesObserved": [
+        "huntsville-al",
+        "madison-al",
+        "athens-al"
+      ],
+      "queryCategoriesObserved": [
+        "house cleaning Huntsville AL",
+        "maid service Madison Alabama",
+        "house cleaning Athens AL"
+      ],
+      "observationDate": "2026-10-25",
+      "searchEnvironment": "Google Organic & AI Overview Citations (US - Alabama)",
+      "apparentStrengths": [
+        "High national brand recognition and Neighborly franchise network authority",
+        "Broad multi-county territory coverage across Madison and Limestone counties"
+      ],
+      "verifiedWeaknesses": [
+        "Combines Huntsville, Decatur, and Athens into shared franchise hub pages, diluting hyper-local relevance for Athens (35611/35613) and Madison (35756/35757/35758)",
+        "Generic national stock photography rather than authentic local team-in-action photography"
+      ],
+      "contentGaps": [
+        "Minimal Limestone County / Athens-specific neighborhood and rural-corridor dust guidance",
+        "No self-service room-by-room task comparison between recurring and move-out tiers"
+      ],
+      "mojoDifferentiationAdvantage": "Mojo Cleaning gives Athens (`/athens-al/`) and Madison (`/madison-al/`) completely isolated 13-page local websites with authentic team photography and local ZIP code verification."
+    },
+    {
+      "id": "bear-brothers-cleaning",
+      "name": "Bear Brothers Cleaning",
+      "domain": "bearbroscleaning.com",
+      "businessType": "local_independent_or_regional",
+      "citiesObserved": [
+        "huntsville-al",
+        "madison-al",
+        "athens-al"
+      ],
+      "queryCategoriesObserved": [
+        "house cleaning Huntsville AL",
+        "deep cleaning Madison AL",
+        "move-out cleaning Athens AL"
+      ],
+      "observationDate": "2026-10-25",
+      "searchEnvironment": "Google Organic & Local Pack (US - Alabama)",
+      "apparentStrengths": [
+        "Modern booking-oriented website with clear text/call contact options",
+        "Visible across Huntsville, Madison, and Athens organic results"
+      ],
+      "verifiedWeaknesses": [
+        "Multi-city expansion template structure across multiple regional markets",
+        "Less granular technical explanation of post-construction HEPA fine-dust passes and surface-specific care"
+      ],
+      "contentGaps": [
+        "Limited dedicated content for Hampton Cove (35763) and Owens Cross Roads (35763) custom homes"
+      ],
+      "mojoDifferentiationAdvantage": "Mojo Cleaning pairs modern conversion UX with deeper answer-first educational guides, explicit 56-point room tables, and dedicated Hampton Cove and Owens Cross Roads hubs."
+    },
+    {
+      "id": "rosie-cleans-alabama",
+      "name": "Rosie Cleans",
+      "domain": "rosiecleansalabama.com",
+      "businessType": "local_independent_or_regional",
+      "citiesObserved": [
+        "huntsville-al",
+        "hampton-cove-al",
+        "owens-cross-roads-al"
+      ],
+      "queryCategoriesObserved": [
+        "family-owned cleaning company Huntsville AL",
+        "house cleaning Hampton Cove AL",
+        "house cleaning Owens Cross Roads AL"
+      ],
+      "observationDate": "2026-10-25",
+      "searchEnvironment": "Google Organic (US - Alabama)",
+      "apparentStrengths": [
+        "Clear local family-owned and veteran-founded positioning",
+        "Mentions Hampton Cove and Owens Cross Roads coverage and online booking"
+      ],
+      "verifiedWeaknesses": [
+        "Does not isolate each service area into a full 13-page standalone local website with dedicated local checklist, FAQ, and service detail URLs"
+      ],
+      "contentGaps": [
+        "Fewer standalone answer-first educational sections comparing 37/47/56-point scopes and post-construction protocols"
+      ],
+      "mojoDifferentiationAdvantage": "Mojo Cleaning delivers a full 13-page isolated experience for both `/hampton-cove-al/` and `/owens-cross-roads-al/`, complete with local 56-point checklist pages and answer-first service guides."
+    },
+    {
+      "id": "the-valley-clean-team",
+      "name": "The Valley Clean Team",
+      "domain": "thevalleycleanteam.com",
+      "businessType": "local_independent_or_regional",
+      "citiesObserved": [
+        "hampton-cove-al",
+        "owens-cross-roads-al",
+        "athens-al"
+      ],
+      "queryCategoriesObserved": [
+        "house cleaning Hampton Cove AL",
+        "house cleaning Owens Cross Roads AL",
+        "cleaning service Athens AL"
+      ],
+      "observationDate": "2026-10-25",
+      "searchEnvironment": "Google Organic (US - Alabama)",
+      "apparentStrengths": [
+        "Hyper-local name recognition in the Hampton Cove / Big Cove valley",
+        "Highlights square-footage pricing tiers for standard, deep, and move-in/out cleans"
+      ],
+      "verifiedWeaknesses": [
+        "Smaller site architecture without isolated 5-service × 5-city programmatic depth or comprehensive JSON-LD entity graphs"
+      ],
+      "contentGaps": [
+        "Limited technical guides on post-renovation drywall dust removal and landlord/realtor turnover preparation"
+      ],
+      "mojoDifferentiationAdvantage": "Mojo Cleaning combines hyper-local Hampton Cove & Big Cove relevance with enterprise-grade technical SEO, fast pre-rendered HTML, and a 48-Hour Happiness Guarantee."
+    },
+    {
+      "id": "rocket-maids",
+      "name": "Rocket Maids",
+      "domain": "therocketmaids.com",
+      "businessType": "local_independent_or_regional",
+      "citiesObserved": [
+        "huntsville-al",
+        "madison-al",
+        "athens-al"
+      ],
+      "queryCategoriesObserved": [
+        "maid service Madison Alabama",
+        "house cleaning Athens AL",
+        "eco-friendly house cleaning Huntsville AL"
+      ],
+      "observationDate": "2026-10-25",
+      "searchEnvironment": "Google Organic (US - Alabama)",
+      "apparentStrengths": [
+        "Regional \"Rocket City\" branding and eco-friendly / online booking messaging"
+      ],
+      "verifiedWeaknesses": [
+        "Single-experience website structure without isolated city navigation for Madison, Athens, Hampton Cove, and Owens Cross Roads"
+      ],
+      "contentGaps": [
+        "Lacks detailed room-by-room exclusions and B2B property-turnover resources"
+      ],
+      "mojoDifferentiationAdvantage": "Mojo Cleaning offers eco-friendly supply options on request while providing deeper service documentation and isolated local navigation."
+    },
+    {
+      "id": "tcl-cleaning-services-athens",
+      "name": "TCL Cleaning Services (The Cleaning Ladies)",
+      "domain": "tclcleaningservices.com",
+      "businessType": "local_independent_or_regional",
+      "citiesObserved": [
+        "athens-al"
+      ],
+      "queryCategoriesObserved": [
+        "house cleaning Athens AL",
+        "cleaning service Athens Alabama"
+      ],
+      "observationDate": "2026-10-25",
+      "searchEnvironment": "Google Organic & Local Pack (Athens, AL)",
+      "apparentStrengths": [
+        "Established local presence in Athens and Limestone County since 2011"
+      ],
+      "verifiedWeaknesses": [
+        "Legacy website structure with limited answer-first content formatting, schema markup, and service-specific landing depth"
+      ],
+      "contentGaps": [
+        "Missing interactive room-by-room 56-point checklist and dedicated move-in, move-out, and post-construction guides for new Athens subdivisions"
+      ],
+      "mojoDifferentiationAdvantage": "Mojo Cleaning’s dedicated `/athens-al/` experience provides 13 fast, mobile-first pages tailored specifically to Limestone County (`35611, 35613`) homeowners."
+    }
+  ],
+  "opportunityMatrix": [
+    {
+      "cityId": "huntsville-al",
+      "cityName": "Huntsville, AL",
+      "primaryServiceFocus": "Recurring Residential & Deep House Cleaning",
+      "searchIntent": "Homeowners in Twickenham, Five Points, Blossomwood, Jones Valley, and South Huntsville comparing trustworthy recurring and kickoff deep cleaning teams.",
+      "targetQueries": [
+        "house cleaning Huntsville AL",
+        "house cleaning service Huntsville AL",
+        "deep cleaning Huntsville AL",
+        "recurring house cleaning Huntsville AL",
+        "insured house cleaners Huntsville AL"
+      ],
+      "visibleCompetitors": [
+        "Two Maids (Huntsville)",
+        "The Cleaning Authority - Huntsville",
+        "Molly Maid",
+        "Bear Brothers Cleaning",
+        "Rosie Cleans"
+      ],
+      "competitorWeaknessesVerified": [
+        "Franchises rely on rotational cleaning or generic national copy without showing exact task differences between 37-point recurring and 47-point deep cleans.",
+        "Few competitors explain how historic hardwood/millwork in Twickenham/Five Points is protected differently from modern surfaces."
+      ],
+      "missingCustomerInformation": [
+        "Side-by-side 37 vs. 47 vs. 56-point checklist comparison",
+        "Explicit list of what is excluded so homeowners are never surprised on cleaning day",
+        "Transparent explanation of what factors affect quote pricing in Huntsville"
+      ],
+      "recommendedMojoAction": "Maintain Huntsville as the primary headquarters hub with answer-first service summaries, home-preparation steps, and pricing-factor tables on every `/huntsville-al/services/*` page.",
+      "implementedUrls": [
+        "/huntsville-al/",
+        "/huntsville-al/services/recurring-residential-cleaning/",
+        "/huntsville-al/services/deep-house-cleaning/",
+        "/huntsville-al/checklist/"
+      ],
+      "priority": "P0 - Critical",
+      "measurementMethod": "Track GSC impressions/clicks for Huntsville service queries + `/huntsville-al/` quote submissions and phone calls."
+    },
+    {
+      "cityId": "madison-al",
+      "cityName": "Madison, AL",
+      "primaryServiceFocus": "Bi-Weekly Family Recurring, Move-Out & New-Build Cleaning",
+      "searchIntent": "Dual-income families and relocating households in Clift Farm, Town Madison, Bridgefield, and Dublin (`35756, 35757, 35758`) seeking reliable bi-weekly upkeep or 56-point move-in/move-out turnovers.",
+      "targetQueries": [
+        "house cleaning Madison AL",
+        "recurring house cleaning Madison AL",
+        "move-out cleaning Madison AL",
+        "move-in cleaning Madison AL",
+        "post-construction cleaning Madison AL"
+      ],
+      "visibleCompetitors": [
+        "Rocket Maids",
+        "The Cleaning Authority - Huntsville",
+        "MaidPro (Madison)",
+        "Molly Maid",
+        "The Housekeepers Inc."
+      ],
+      "competitorWeaknessesVerified": [
+        "Most competitors send Madison visitors to Huntsville-centric navigation or generic franchise pages.",
+        "Lack of specific guidance on red-clay construction dust in Clift Farm/Town Madison and 56-point lease/closing inspection checklists."
+      ],
+      "missingCustomerInformation": [
+        "Isolated Madison navigation that keeps users inside `/madison-al/`",
+        "Empty-home utility & preparation checklist for Move-In and Move-Out appointments"
+      ],
+      "recommendedMojoAction": "Enforce 100% Madison location isolation across all 13 `/madison-al/*` routes and highlight the 56-point turnover checklist for Madison relocations and property managers.",
+      "implementedUrls": [
+        "/madison-al/",
+        "/madison-al/services/recurring-residential-cleaning/",
+        "/madison-al/services/move-out-cleaning/",
+        "/madison-al/services/move-in-cleaning/",
+        "/madison-al/checklist/"
+      ],
+      "priority": "P0 - Critical",
+      "measurementMethod": "Track `/madison-al/` organic landing sessions, service-pill preselection on `/madison-al/request-a-quote/`, and qualified Madison leads."
+    },
+    {
+      "cityId": "hampton-cove-al",
+      "cityName": "Hampton Cove, AL",
+      "primaryServiceFocus": "Custom Home Deep Detailing & Recurring Estate Upkeep",
+      "searchIntent": "Homeowners in Hampton Cove, McMullen Cove, and Big Cove (`35763`) with larger square footage, high ceilings, natural stone counters, and custom glass fixtures seeking meticulous, insured care.",
+      "targetQueries": [
+        "house cleaning Hampton Cove AL",
+        "deep cleaning Hampton Cove AL",
+        "recurring house cleaning Hampton Cove AL",
+        "custom home cleaning 35763"
+      ],
+      "visibleCompetitors": [
+        "The Valley Clean Team",
+        "Rosie Cleans",
+        "House Happy Cleaners",
+        "Two Maids (Huntsville)"
+      ],
+      "competitorWeaknessesVerified": [
+        "National franchises treat Hampton Cove as a minor footnote on Huntsville pages.",
+        "Local competitors rarely detail surface-safety protocols for custom stone, glass pendants, and multi-bathroom layouts."
+      ],
+      "missingCustomerInformation": [
+        "Dedicated Hampton Cove website experience (`/hampton-cove-al/`)",
+        "Clear explanation of how large-home layouts and unused guest suites can be customized or skipped"
+      ],
+      "recommendedMojoAction": "Provide a complete 13-page `/hampton-cove-al/` experience emphasizing custom room skipping, natural stone/hardwood care, and the 47-point Deep Clean reset.",
+      "implementedUrls": [
+        "/hampton-cove-al/",
+        "/hampton-cove-al/services/deep-house-cleaning/",
+        "/hampton-cove-al/services/recurring-residential-cleaning/",
+        "/hampton-cove-al/checklist/"
+      ],
+      "priority": "P1 - High",
+      "measurementMethod": "Track organic visibility for `Hampton Cove` / `35763` queries and quote conversions originating from `/hampton-cove-al/*`."
+    },
+    {
+      "cityId": "owens-cross-roads-al",
+      "cityName": "Owens Cross Roads, AL",
+      "primaryServiceFocus": "Post-Construction Dust Removal, Move-In & Recurring Cleaning",
+      "searchIntent": "Homeowners and builders in fast-growing Owens Cross Roads (`35763`) needing multi-pass drywall dust removal after construction/renovation or ongoing recurring upkeep.",
+      "targetQueries": [
+        "house cleaning Owens Cross Roads AL",
+        "post-construction cleaning Owens Cross Roads AL",
+        "move-in cleaning Owens Cross Roads AL",
+        "deep cleaning Owens Cross Roads AL"
+      ],
+      "visibleCompetitors": [
+        "The Valley Clean Team",
+        "Rosie Cleans",
+        "Walls Cleaning Service",
+        "The Maids of Huntsville"
+      ],
+      "competitorWeaknessesVerified": [
+        "Very few competitors publish a dedicated `/owens-cross-roads-al/services/post-construction-cleaning/` page explaining how fine gypsum dust is removed without scratching new glass or cabinetry."
+      ],
+      "missingCustomerInformation": [
+        "Multi-pass HEPA vacuum + damp microfiber protocol for new builds",
+        "Pre-clean readiness checklist for builders and new homeowners"
+      ],
+      "recommendedMojoAction": "Position `/owens-cross-roads-al/` with strong post-construction, move-in, and recurring residential guides tailored to southeast Madison County.",
+      "implementedUrls": [
+        "/owens-cross-roads-al/",
+        "/owens-cross-roads-al/services/post-construction-cleaning/",
+        "/owens-cross-roads-al/services/move-in-cleaning/",
+        "/owens-cross-roads-al/services/recurring-residential-cleaning/"
+      ],
+      "priority": "P1 - High",
+      "measurementMethod": "Track impressions and quote requests on `/owens-cross-roads-al/*` routes."
+    },
+    {
+      "cityId": "athens-al",
+      "cityName": "Athens, AL",
+      "primaryServiceFocus": "Recurring Residential, Deep Cleaning & Move-In/Move-Out Turnovers",
+      "searchIntent": "Homeowners, landlords, and relocating families across Athens and Limestone County (`35611, 35613`) looking for a dependable, insured cleaning company with transparent checklists.",
+      "targetQueries": [
+        "house cleaning Athens AL",
+        "cleaning service Athens Alabama",
+        "deep cleaning Athens AL",
+        "move-out cleaning Athens AL"
+      ],
+      "visibleCompetitors": [
+        "TCL Cleaning Services",
+        "Bear Brothers Cleaning",
+        "The Valley Clean Team",
+        "MaidPro",
+        "Molly Maid"
+      ],
+      "competitorWeaknessesVerified": [
+        "Franchises bundle Athens into multi-city Decatur/Huntsville pages; older local sites lack modern mobile quote flows and answer-first FAQ hubs."
+      ],
+      "missingCustomerInformation": [
+        "Dedicated Athens 56-point checklist and Limestone County ZIP verification (`35611, 35613`)",
+        "Answer-first comparison of Standard vs. Deep vs. Move-Out cleaning for Athens homes"
+      ],
+      "recommendedMojoAction": "Deliver a standalone 13-page `/athens-al/` experience with Limestone County neighborhood relevance and mobile-first quote conversion.",
+      "implementedUrls": [
+        "/athens-al/",
+        "/athens-al/services/recurring-residential-cleaning/",
+        "/athens-al/services/deep-house-cleaning/",
+        "/athens-al/services/move-out-cleaning/"
+      ],
+      "priority": "P1 - High",
+      "measurementMethod": "Track `/athens-al/` organic impressions, clicks, and Limestone County quote submissions."
+    }
+  ]
+}

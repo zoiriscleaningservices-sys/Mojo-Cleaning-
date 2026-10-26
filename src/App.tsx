@@ -20,13 +20,16 @@ import { AboutPage } from './pages/AboutPage';
 import { ChecklistPage } from './pages/ChecklistPage';
 import { ContactPage } from './pages/ContactPage';
 import { FaqsPage } from './pages/FaqsPage';
+import { GuideArticlePage, GuidesHubPage } from './pages/GuidesPage';
 import { HomePage } from './pages/HomePage';
 import { LocationsIndexPage } from './pages/LocationsIndexPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { RequestQuotePage } from './pages/RequestQuotePage';
 import { ReviewsPage } from './pages/ReviewsPage';
+import { SeoDashboardPage } from './pages/SeoDashboardPage';
 import { ServiceLocationPage } from './pages/ServiceLocationPage';
 import { ServicesIndexPage } from './pages/ServicesIndexPage';
+import type { GuideSlug } from './data/guides-data';
 import { resolveActiveLocationId } from './utils/location-routing';
 
 interface AppProps {
@@ -323,6 +326,17 @@ export const App: React.FC<AppProps> = ({ initialPath }) => {
         );
       case 'locations_directory':
         return <LocationsIndexPage />;
+      case 'guides_hub':
+        return <GuidesHubPage activeLocation={activeLocation} />;
+      case 'guide_article':
+        return (
+          <GuideArticlePage
+            guideSlug={(currentPage.guideSlug as GuideSlug) || 'house-cleaning-pricing-guide-huntsville-al'}
+            activeLocation={activeLocation}
+          />
+        );
+      case 'seo_dashboard':
+        return <SeoDashboardPage activeLocation={activeLocation} />;
       case 'legal':
         return (
           <LegalView

@@ -189,6 +189,7 @@ export function buildLocationNavigation(locationId: LocationId): NavigationConfi
       { label: '56-Point Cleaning Checklist', href: checklistHref },
       { label: 'Client Reviews', href: reviewsHref },
       { label: 'FAQs', href: faqsHref },
+      { label: 'Cleaning Guides & Pricing Factors', href: '/guides/' },
       { label: 'Contact', href: contactHref },
       { label: 'Request a Quote', href: quoteHref },
     ],

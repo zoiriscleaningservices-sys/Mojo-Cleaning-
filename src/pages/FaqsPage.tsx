@@ -12,6 +12,7 @@ import { QuoteForm } from '../components/QuoteForm';
 import { HeroWelcomeMascotBadge } from '../components/MojoMascot';
 import type { FaqEntity, LocationEntity } from '../data/entities';
 import { GENERAL_BUSINESS_FAQS } from '../data/business-profile';
+import { GUIDE_ARTICLES_DATA } from '../data/guides-data';
 import {
   getAvailableServicesForLocation,
   getLocationChecklistPath,
@@ -285,15 +286,32 @@ export const FaqsPage: React.FC<FaqsPageProps> = ({ location }) => {
 
             <div className="discovery-panel">
               <h3 className="discovery-panel-title">
-                {location.city} 56-Point Room Checklist
+                {location.city} 56-Point Checklist &amp; Homeowner Guides
               </h3>
               <p className="discovery-panel-desc">
                 Want to see every task included across Kitchen (24 tasks), Bathrooms (17 tasks), and
-                Bedrooms &amp; Living Rooms (15 tasks)? Open our full {location.name} checklist.
+                Bedrooms &amp; Living Rooms (15 tasks), or read our pricing &amp; comparison guides?
               </p>
-              <div style={{ marginTop: '1.25rem' }}>
+              <ul className="discovery-link-list" style={{ marginTop: '1rem' }}>
+                {GUIDE_ARTICLES_DATA.map((guide) => (
+                  <li key={guide.id}>
+                    <a href={guide.urlPath} className="discovery-link-item">
+                      <div>
+                        <strong>{guide.categoryLabel}</strong>
+                        <span>{guide.h1}</span>
+                      </div>
+                      <ArrowRightIcon size={15} />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <div style={{ marginTop: '1.25rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                 <a href={checklistHref} className="btn btn-outline-dark">
                   <span>Open 56-Point Checklist</span>
+                  <ArrowRightIcon size={15} />
+                </a>
+                <a href="/guides/" className="btn btn-coral">
+                  <span>All Homeowner Guides</span>
                   <ArrowRightIcon size={15} />
                 </a>
               </div>

@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build && node scripts/prerender.mjs",
+    "build": "tsc --noEmit && vite build && node scripts/prerender.mjs && node scripts/seo-test-suite.mjs",
+    "test:seo": "node scripts/seo-test-suite.mjs",
     "preview": "vite preview --port 4173",
     "typecheck": "tsc --noEmit"
   },

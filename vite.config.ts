@@ -33,6 +33,13 @@ const SERVICE_SLUGS = [
 const VALID_PUBLISHED_PATHS = new Set<string>([
   '/',
   '/locations/',
+  '/guides/',
+  '/guides/house-cleaning-pricing-guide-huntsville-al/',
+  '/guides/deep-cleaning-vs-recurring-cleaning/',
+  '/guides/move-out-cleaning-inspection-guide/',
+  '/guides/post-construction-dust-removal-guide/',
+  '/guides/how-to-choose-insured-house-cleaning-service/',
+  '/seo-dashboard/',
   '/privacy-policy/',
   '/terms/',
   ...LOCATION_SLUGS.flatMap((loc) => [

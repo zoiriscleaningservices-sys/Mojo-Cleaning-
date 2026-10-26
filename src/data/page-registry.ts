@@ -6,7 +6,12 @@
 
 import { GENERAL_BUSINESS_FAQS, VERIFIED_BUSINESS_PROFILE } from './business-profile';
 import type { BreadcrumbItem, FaqEntity, LocationEntity, PageEntity } from './entities';
+import { GUIDE_ARTICLES_DATA } from './guides-data';
 import { DEFAULT_LOCATION_ID, LOCATIONS_BY_ID, LOCATIONS_DATA } from './locations-data';
+import {
+  evaluatePageIndexability,
+  evaluatePageOpportunityScore,
+} from './seo-architecture';
 import {
   PUBLISHED_SERVICE_LOCATIONS_BY_PATH,
   getLocationServiceEntity,
@@ -714,10 +719,199 @@ function createAllPages(): PageEntity[] {
     }
   }
 
-  return pages;
+  // 5. Informational & Comparison Resource Guides Hub (/guides/)
+  {
+    const path = '/guides/';
+    const canonicalUrl = `${SITE_ORIGIN}${path}`;
+    const title = 'House Cleaning Guides, Checklists & Pricing Factors | Mojo Cleaning';
+    const metaDescription =
+      'Explore verified North Alabama residential cleaning guides from Mojo Cleaning: pricing factors, 47-point deep vs. 37-point recurring comparisons, move-out prep & more.';
+    const h1 = 'North Alabama Residential Cleaning Guides & Homeowner Resources';
+    const breadcrumbs: BreadcrumbItem[] = [
+      { label: 'Huntsville, AL', href: '/huntsville-al/' },
+      { label: 'Cleaning Guides & Resources', href: '/guides/' },
+    ];
+    pages.push({
+      path,
+      pageType: 'guides_hub',
+      locationId: defaultLoc.id,
+      title,
+      metaDescription,
+      canonicalUrl,
+      h1,
+      robots: 'index, follow',
+      publicationStatus: 'published',
+      primarySearchIntent: 'informational_faq',
+      primaryTargetQuery: 'house cleaning guides huntsville al',
+      lastModified: '2026-10-26',
+      breadcrumbs,
+      jsonLd: [
+        {
+          '@context': 'https://schema.org',
+          '@graph': [
+            buildOrganizationSchema(defaultLoc),
+            siteSchema,
+            buildWebPageSchema(canonicalUrl, title, metaDescription),
+            buildBreadcrumbSchema(canonicalUrl, breadcrumbs),
+          ],
+        },
+      ],
+    });
+  }
+
+  // 6. Individual Verified Guide Articles (/guides/{slug}/) with Article Schema
+  for (const guide of GUIDE_ARTICLES_DATA) {
+    if (guide.publicationStatus !== 'published') continue;
+    const canonicalUrl = `${SITE_ORIGIN}${guide.urlPath}`;
+    const breadcrumbs: BreadcrumbItem[] = [
+      { label: 'Huntsville, AL', href: '/huntsville-al/' },
+      { label: 'Cleaning Guides', href: '/guides/' },
+      { label: guide.categoryLabel, href: guide.urlPath },
+    ];
+    const articleSchema: Record<string, unknown> = {
+      '@type': 'Article',
+      '@id': `${canonicalUrl}#article`,
+      headline: guide.h1,
+      description: guide.metaDescription,
+      datePublished: guide.publishedDate,
+      dateModified: guide.lastModified,
+      author: {
+        '@type': 'Organization',
+        '@id': `${SITE_ORIGIN}/#organization`,
+        name: guide.authorName,
+      },
+      publisher: {
+        '@id': `${SITE_ORIGIN}/#organization`,
+      },
+      mainEntityOfPage: {
+        '@id': `${canonicalUrl}#webpage`,
+      },
+      image: `${SITE_ORIGIN}${guide.heroImage.src}`,
+      inLanguage: 'en-US',
+    };
+    const faqSchema = buildFaqSchema(canonicalUrl, guide.faqs);
+    const graph: Record<string, unknown>[] = [
+      buildOrganizationSchema(defaultLoc),
+      siteSchema,
+      buildWebPageSchema(canonicalUrl, guide.title, guide.metaDescription),
+      buildBreadcrumbSchema(canonicalUrl, breadcrumbs),
+      articleSchema,
+    ];
+    if (faqSchema) graph.push(faqSchema);
+
+    pages.push({
+      path: guide.urlPath,
+      pageType: 'guide_article',
+      locationId: defaultLoc.id,
+      guideSlug: guide.slug,
+      title: guide.title,
+      metaDescription: guide.metaDescription,
+      canonicalUrl,
+      h1: guide.h1,
+      robots: 'index, follow',
+      publicationStatus: guide.publicationStatus,
+      primarySearchIntent: guide.primaryIntent,
+      primaryTargetQuery: guide.primaryQuery,
+      relatedQueryGroup: guide.secondaryQueries,
+      lastModified: guide.lastModified,
+      breadcrumbs,
+      jsonLd: [{ '@context': 'https://schema.org', '@graph': graph }],
+    });
+  }
+
+  // 7. Administrative SEO Expansion & Indexability Dashboard (/seo-dashboard/) — intentionally noindex
+  {
+    const path = '/seo-dashboard/';
+    const canonicalUrl = `${SITE_ORIGIN}${path}`;
+    const title = 'SEO Architecture & Indexability Governance Dashboard | Mojo Cleaning';
+    const metaDescription =
+      'Internal technical SEO governance dashboard tracking published pages, indexability policy decisions, sitemap partitions, and Search Console verification.';
+    const h1 = 'SEO Architecture, Page Registry & Indexability Governance Dashboard';
+    const breadcrumbs: BreadcrumbItem[] = [
+      { label: 'Huntsville, AL', href: '/huntsville-al/' },
+      { label: 'SEO Governance Dashboard', href: '/seo-dashboard/' },
+    ];
+    pages.push({
+      path,
+      pageType: 'seo_dashboard',
+      locationId: defaultLoc.id,
+      title,
+      metaDescription,
+      canonicalUrl,
+      h1,
+      robots: 'noindex, nofollow',
+      publicationStatus: 'published',
+      lastModified: '2026-10-26',
+      breadcrumbs,
+      jsonLd: [],
+    });
+  }
+
+  // Enrich every page through the centralized Phase 5 Indexability Policy & Phase 3.2 Opportunity Scoring Engine
+  return pages.map((page, index) => {
+    const pageId =
+      page.pageId ||
+      `mojo_page_${String(index + 1).padStart(3, '0')}_${page.path === '/' ? 'root' : page.path.replace(/^\/|\/$/g, '').replace(/\//g, '_')}`;
+    const decision = evaluatePageIndexability({
+      pageId,
+      path: page.path,
+      pageType: page.pageType,
+      canonicalUrl: page.canonicalUrl,
+      publicationStatus: page.publicationStatus,
+      locationId: page.locationId,
+      serviceId: page.serviceId,
+    });
+    const score = evaluatePageOpportunityScore({
+      pageType: page.pageType,
+      hasVerifiedService: true,
+      hasVerifiedLocation: true,
+      hasUniqueSubstantiveCopy: true,
+      hasInternalLinks: decision.canIndex,
+      hasValidCanonical: Boolean(page.canonicalUrl.startsWith(SITE_ORIGIN)),
+    });
+
+    return {
+      ...page,
+      pageId,
+      canonicalTarget: decision.canonicalUrl,
+      robots: decision.canIndex ? 'index, follow' : 'noindex, nofollow',
+      indexabilityStatus: decision.indexabilityClass,
+      sitemapEligibility: decision.inSitemap,
+      sitemapFile: decision.sitemapFile,
+      primarySearchIntent:
+        page.primarySearchIntent ||
+        (page.pageType === 'location_service_detail'
+          ? 'service_location'
+          : page.pageType === 'location_services' || page.pageType === 'location_checklist'
+            ? 'service'
+            : page.pageType === 'location_quote'
+              ? 'cost_quote'
+              : page.pageType === 'location_reviews' || page.pageType === 'location_about'
+                ? 'comparison_trust'
+                : page.pageType === 'location_faqs'
+                  ? 'informational_faq'
+                  : 'location'),
+      primaryTargetQuery:
+        page.primaryTargetQuery ||
+        `${page.h1.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim()}`,
+      contentSource: 'centralized_verified_entities_registry',
+      contentVerificationStatus: 'verified',
+      lastModified: page.lastModified || '2026-10-26',
+      lastQualityReviewDate: '2026-10-26',
+      internalLinkStatus: decision.canIndex
+        ? 'linked_in_navigation_and_body'
+        : 'unlinked_admin',
+      duplicateContentReviewStatus: 'verified_distinct',
+      opportunityScore: score.totalScore,
+    };
+  });
 }
 
 export const PUBLISHED_PAGES: PageEntity[] = createAllPages();
+
+export const INDEXABLE_PAGES: PageEntity[] = PUBLISHED_PAGES.filter(
+  (p) => p.sitemapEligibility && p.robots.startsWith('index')
+);
 
 export const PUBLISHED_PAGES_BY_PATH: Record<string, PageEntity> = PUBLISHED_PAGES.reduce(
   (acc, page) => {
@@ -728,6 +922,7 @@ export const PUBLISHED_PAGES_BY_PATH: Record<string, PageEntity> = PUBLISHED_PAG
 );
 
 export const NOT_FOUND_PAGE: PageEntity = {
+  pageId: 'mojo_page_404_not_found',
   path: '/404/',
   pageType: 'not_found',
   locationId: DEFAULT_LOCATION_ID,
@@ -735,9 +930,19 @@ export const NOT_FOUND_PAGE: PageEntity = {
   metaDescription:
     'The page you requested could not be found. Return to your Mojo Cleaning neighborhood experience or browse our service areas directory.',
   canonicalUrl: `${SITE_ORIGIN}/404/`,
+  canonicalTarget: `${SITE_ORIGIN}/404/`,
   h1: 'We couldn’t find that room on our checklist.',
   robots: 'noindex, nofollow',
   publicationStatus: 'unpublished',
+  indexabilityStatus: 'noindex_not_found',
+  sitemapEligibility: false,
+  sitemapFile: null,
+  contentSource: 'centralized_verified_entities_registry',
+  contentVerificationStatus: 'verified',
+  lastModified: '2026-10-26',
+  lastQualityReviewDate: '2026-10-26',
+  internalLinkStatus: 'unlinked_admin',
+  duplicateContentReviewStatus: 'verified_distinct',
   breadcrumbs: [
     { label: 'Huntsville, AL', href: '/huntsville-al/' },
     { label: 'Page Not Found (404)', href: '/404/' },

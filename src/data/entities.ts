@@ -258,6 +258,9 @@ export type PageType =
   | 'location_contact'
   | 'location_quote'
   | 'locations_directory'
+  | 'guides_hub'
+  | 'guide_article'
+  | 'seo_dashboard'
   | 'legal'
   | 'not_found';
 
@@ -361,18 +364,34 @@ export interface BreadcrumbItem {
 }
 
 export interface PageEntity {
+  pageId?: string;
   path: string;
   pageType: PageType;
   title: string;
   metaDescription: string;
   canonicalUrl: string;
+  canonicalTarget?: string;
   h1: string;
-  robots: 'index, follow' | 'noindex, nofollow';
+  robots: 'index, follow' | 'index, follow, max-image-preview:large' | 'noindex, nofollow';
   publicationStatus: PublicationStatus;
+  indexabilityStatus?: 'indexable_canonical' | 'noindex_utility_or_admin' | 'noindex_not_found' | 'excluded_unpublished_candidate' | 'redirected_legacy_url';
+  sitemapEligibility?: boolean;
+  sitemapFile?: string | null;
+  primarySearchIntent?: SearchIntentCategory;
+  primaryTargetQuery?: string;
+  relatedQueryGroup?: string[];
+  contentSource?: string;
+  contentVerificationStatus?: VerificationStatus;
+  lastModified?: string;
+  lastQualityReviewDate?: string;
+  internalLinkStatus?: 'linked_in_navigation_and_body' | 'linked_in_body' | 'linked_in_footer' | 'unlinked_admin';
+  duplicateContentReviewStatus?: 'verified_distinct' | 'flagged_overlap';
+  opportunityScore?: number;
   breadcrumbs: BreadcrumbItem[];
   locationId?: LocationId;
   serviceId?: ServiceId;
   serviceLocationId?: string;
+  guideSlug?: string;
   legalSlug?: 'privacy-policy' | 'terms';
   jsonLd: Record<string, unknown>[];
 }

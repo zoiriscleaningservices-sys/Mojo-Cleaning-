@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://mojocleaningservice.com/sitemap_index.xml
 Sitemap: https://mojocleaningservice.com/sitemap.xml

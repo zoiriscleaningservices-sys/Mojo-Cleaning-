@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://mojocleaningservice.com/sitemap-core.xml</loc>
+    <lastmod>2026-10-26</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://mojocleaningservice.com/sitemap-locations.xml</loc>
+    <lastmod>2026-10-26</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://mojocleaningservice.com/sitemap-services.xml</loc>
+    <lastmod>2026-10-26</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://mojocleaningservice.com/sitemap-service-locations.xml</loc>
+    <lastmod>2026-10-26</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://mojocleaningservice.com/sitemap-guides.xml</loc>
+    <lastmod>2026-10-26</lastmod>
+  </sitemap>
+</sitemapindex>

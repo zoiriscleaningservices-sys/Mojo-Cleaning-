@@ -9,6 +9,8 @@ const distDir = path.resolve(rootDir, 'dist');
 const publicDir = path.resolve(rootDir, 'public');
 const ssrOutDir = path.resolve(rootDir, '.ssr-temp');
 
+const SITE_ORIGIN = 'https://mojocleaningservice.com';
+
 function escapeHtmlAttr(str) {
   return String(str)
     .replace(/&/g, '&amp;')
@@ -38,8 +40,7 @@ function injectPageMetadataAndMarkup(templateHtml, page, renderedMarkup, depth =
   const schemaObj =
     page.jsonLd && page.jsonLd[0]
       ? page.jsonLd[0]
-      : { '@context': 'https://schema.org', '@graph': [] };
-  const jsonLdString = JSON.stringify(schemaObj, null, 2);
+      : null;
 
   let html = templateHtml;
 
@@ -76,46 +77,35 @@ function injectPageMetadataAndMarkup(templateHtml, page, renderedMarkup, depth =
     /<meta\s+name="twitter:description"\s+content="[\s\S]*?"\s*\/>/,
     `<meta name="twitter:description" content="${safeDesc}" />`
   );
-  html = html.replace(
-    /<script id="mojo-schema-ld" type="application\/ld\+json">[\s\S]*?<\/script>/,
-    `<script id="mojo-schema-ld" type="application/ld+json">\n${jsonLdString}\n    </script>`
-  );
+
+  if (schemaObj) {
+    const jsonLdString = JSON.stringify(schemaObj, null, 2);
+    html = html.replace(
+      /<script id="mojo-schema-ld" type="application\/ld\+json">[\s\S]*?<\/script>/,
+      `<script id="mojo-schema-ld" type="application/ld+json">\n${jsonLdString}\n    </script>`
+    );
+  } else {
+    html = html.replace(
+      /<script id="mojo-schema-ld" type="application\/ld\+json">[\s\S]*?<\/script>/,
+      ''
+    );
+  }
 
   html = html.replace('<div id="root"></div>', `<div id="root">${renderedMarkup}</div>`);
 
   return rewriteHtmlAssetsRelativeToDepth(html, depth);
 }
 
-function generateSitemapXml(publishedPages) {
-  const indexablePages = publishedPages.filter(
-    (p) => p.publicationStatus === 'published' && p.robots.startsWith('index')
-  );
-
-  const urlsXml = indexablePages
+/**
+ * PHASE 7 — SITEMAP GENERATOR (Strictly <loc> and registry <lastmod>, no artificial priority/changefreq)
+ */
+function generateUrlsetXml(pages) {
+  const urlsXml = pages
     .map((p) => {
-      const priority =
-        p.path === '/' || p.pageType === 'location_home'
-          ? '1.0'
-          : p.pageType === 'locations_directory' ||
-              p.pageType === 'location_services' ||
-              p.pageType === 'location_quote'
-            ? '0.9'
-            : p.pageType === 'location_service_detail' || p.pageType === 'location_checklist'
-              ? '0.85'
-              : p.pageType === 'location_about' ||
-                  p.pageType === 'location_reviews' ||
-                  p.pageType === 'location_faqs' ||
-                  p.pageType === 'location_contact'
-                ? '0.8'
-                : '0.4';
-
-      const changefreq = p.pageType === 'legal' ? 'yearly' : 'weekly';
-
+      const lastmod = p.lastModified || '2026-10-26';
       return `  <url>
     <loc>${p.canonicalUrl}</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>
+    <lastmod>${lastmod}</lastmod>
   </url>`;
     })
     .join('\n');
@@ -124,6 +114,23 @@ function generateSitemapXml(publishedPages) {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urlsXml}
 </urlset>
+`;
+}
+
+function generateSitemapIndexXml(sitemapFiles) {
+  const entries = sitemapFiles
+    .map(
+      (item) => `  <sitemap>
+    <loc>${SITE_ORIGIN}/${item.filename}</loc>
+    <lastmod>${item.lastmod}</lastmod>
+  </sitemap>`
+    )
+    .join('\n');
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${entries}
+</sitemapindex>
 `;
 }
 
@@ -159,7 +166,7 @@ async function runPrerender() {
 
   const templateHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf-8');
 
-  // 1. Pre-render all 69 published indexable routes
+  // 1. Pre-render all published routes
   for (const pageDef of PUBLISHED_PAGES) {
     const { html: renderedMarkup, page } = renderPageByPath(pageDef.path);
 
@@ -179,18 +186,70 @@ async function runPrerender() {
 
   // 2. Pre-render Custom 404 Page (dist/404.html & dist/404/index.html)
   const { html: notFoundMarkup } = renderPageByPath('/404/');
-  const notFoundHtmlRoot = injectPageMetadataAndMarkup(templateHtml, NOT_FOUND_PAGE, notFoundMarkup, 0);
-  const notFoundHtmlSub = injectPageMetadataAndMarkup(templateHtml, NOT_FOUND_PAGE, notFoundMarkup, 1);
+  const notFoundHtmlRoot = injectPageMetadataAndMarkup(
+    templateHtml,
+    NOT_FOUND_PAGE,
+    notFoundMarkup,
+    0
+  );
+  const notFoundHtmlSub = injectPageMetadataAndMarkup(
+    templateHtml,
+    NOT_FOUND_PAGE,
+    notFoundMarkup,
+    1
+  );
   fs.writeFileSync(path.join(distDir, '404.html'), notFoundHtmlRoot, 'utf-8');
   const dir404 = path.join(distDir, '404');
   fs.mkdirSync(dir404, { recursive: true });
   fs.writeFileSync(path.join(dir404, 'index.html'), notFoundHtmlSub, 'utf-8');
   console.log('Pre-rendered [not_found]: dist/404.html');
 
-  // 3. Generate dynamic sitemap.xml in both public/ and dist/
-  const sitemapXml = generateSitemapXml(PUBLISHED_PAGES);
-  fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapXml, 'utf-8');
-  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml, 'utf-8');
+  // 3. Generate Segmented XML Sitemaps + Sitemap Index from Authoritative Page Registry
+  const indexablePages = PUBLISHED_PAGES.filter(
+    (p) =>
+      p.publicationStatus === 'published' &&
+      p.sitemapEligibility === true &&
+      p.robots.startsWith('index')
+  );
+
+  const sitemapPartitions = [
+    'sitemap-core.xml',
+    'sitemap-locations.xml',
+    'sitemap-services.xml',
+    'sitemap-service-locations.xml',
+    'sitemap-guides.xml',
+  ];
+
+  const generatedChildSitemaps = [];
+
+  for (const filename of sitemapPartitions) {
+    const pagesForFile = indexablePages.filter((p) => p.sitemapFile === filename);
+    const xml = generateUrlsetXml(pagesForFile);
+    fs.writeFileSync(path.join(distDir, filename), xml, 'utf-8');
+    fs.writeFileSync(path.join(publicDir, filename), xml, 'utf-8');
+    const latestLastMod =
+      pagesForFile
+        .map((p) => p.lastModified || '2026-10-26')
+        .sort()
+        .reverse()[0] || '2026-10-26';
+    generatedChildSitemaps.push({
+      filename,
+      count: pagesForFile.length,
+      lastmod: latestLastMod,
+    });
+  }
+
+  const sitemapIndexXml = generateSitemapIndexXml(generatedChildSitemaps);
+  fs.writeFileSync(path.join(distDir, 'sitemap_index.xml'), sitemapIndexXml, 'utf-8');
+  fs.writeFileSync(path.join(publicDir, 'sitemap_index.xml'), sitemapIndexXml, 'utf-8');
+
+  // Also write combined sitemap.xml for backward compatibility
+  const combinedSitemapXml = generateUrlsetXml(indexablePages);
+  fs.writeFileSync(path.join(distDir, 'sitemap.xml'), combinedSitemapXml, 'utf-8');
+  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), combinedSitemapXml, 'utf-8');
+  console.log(
+    `Generated sitemap_index.xml + 5 child sitemaps (${indexablePages.length} canonical indexable URLs).`
+  );
 
   // 4. Generate _redirects for legacy route preservation
   const redirectLines = Object.entries(LEGACY_REDIRECTS || {}).flatMap(([fromPath, toPath]) => {
@@ -216,6 +275,8 @@ async function runPrerender() {
     'owens-cross-roads-al',
     'athens-al',
     'locations',
+    'guides',
+    'seo-dashboard',
     'privacy-policy',
     'terms',
     '404',
@@ -230,7 +291,9 @@ async function runPrerender() {
 
   // Clean up temporary SSR build folder
   fs.rmSync(ssrOutDir, { recursive: true, force: true });
-  console.log(`Static pre-rendering complete (${PUBLISHED_PAGES.length} routes + GitHub Pages root sync).`);
+  console.log(
+    `Static pre-rendering complete (${PUBLISHED_PAGES.length} published routes + 404.html + GitHub Pages root sync).`
+  );
 }
 
 runPrerender().catch((err) => {

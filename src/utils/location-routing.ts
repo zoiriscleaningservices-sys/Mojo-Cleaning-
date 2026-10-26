@@ -23,7 +23,11 @@ export function isValidLocationId(value: string | undefined | null): value is Lo
 }
 
 export function extractLocationIdFromPath(rawPath: string): LocationId | null {
-  const clean = rawPath.split('#')[0].split('?')[0].trim();
+  const clean = rawPath
+    .split('#')[0]
+    .split('?')[0]
+    .trim()
+    .replace(/^\/Mojo-Cleaning-(?=\/|$)/i, '');
   const segments = clean.split('/').filter(Boolean);
   if (segments.length === 0) {
     return null;

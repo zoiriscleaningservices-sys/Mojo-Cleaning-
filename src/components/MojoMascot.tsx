@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import type { LocationEntity } from '../data/entities';
+import { withSiteBasePath } from '../data/page-registry';
 import { getLocationChecklistPath, getLocationQuotePath } from '../utils/location-routing';
 import { ArrowRightIcon, MojoSparkle } from './Icons';
 
@@ -83,9 +84,9 @@ export const MojoMascotFigure: React.FC<MojoMascotFigureProps> = ({
         ✦
       </span>
       <picture>
-        <source srcSet={config.webp} type="image/webp" />
+        <source srcSet={withSiteBasePath(config.webp)} type="image/webp" />
         <img
-          src={config.png}
+          src={withSiteBasePath(config.png)}
           alt={alt || config.defaultAlt}
           width={size}
           height={aspectHeight}

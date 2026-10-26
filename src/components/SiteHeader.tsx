@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { BUSINESS_INFO } from '../config/business';
 import type { LocationId } from '../data/entities';
+import { withSiteBasePath } from '../data/page-registry';
 import { buildLocationNavigation } from '../utils/location-routing';
 import {
   ArrowRightIcon,
@@ -104,9 +105,9 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, activeLocat
               aria-label={`Mojo Cleaning ${nav.locationName} — Return to ${nav.locationCity} homepage`}
             >
               <picture>
-                <source srcSet="/images/mojo-logo.webp" type="image/webp" />
+                <source srcSet={withSiteBasePath('/images/mojo-logo.webp')} type="image/webp" />
                 <img
-                  src="/mojo-logo.png"
+                  src={withSiteBasePath('/mojo-logo.png')}
                   alt="Mojo Cleaning"
                   width={150}
                   height={75}

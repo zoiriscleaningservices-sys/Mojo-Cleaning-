@@ -1,6 +1,7 @@
 import React from 'react';
 import type { ServiceItem } from '../config/business';
 import type { LocationEntity, ServiceId } from '../data/entities';
+import { withSiteBasePath } from '../data/page-registry';
 import {
   getLocationQuotePath,
   getLocationServiceDetailPath,
@@ -281,13 +282,13 @@ export const AvailableServicesCatalog: React.FC<AvailableServicesCatalogProps> =
                   {service.image.webpMobile ? (
                     <source
                       media="(max-width: 640px)"
-                      srcSet={service.image.webpMobile}
+                      srcSet={withSiteBasePath(service.image.webpMobile)}
                       type="image/webp"
                     />
                   ) : null}
-                  <source srcSet={service.image.webp} type="image/webp" />
+                  <source srcSet={withSiteBasePath(service.image.webp)} type="image/webp" />
                   <img
-                    src={service.image.src}
+                    src={withSiteBasePath(service.image.src)}
                     alt={`${service.name} in ${location.name} — ${service.image.alt}`}
                     width={960}
                     height={640}

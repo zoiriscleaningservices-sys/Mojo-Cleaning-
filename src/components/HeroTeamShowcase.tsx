@@ -1,5 +1,6 @@
 import React from 'react';
 import type { LocationEntity, ServiceId } from '../data/entities';
+import { withSiteBasePath } from '../data/page-registry';
 import { getLocationChecklistPath } from '../utils/location-routing';
 import { ArrowRightIcon, MojoSparkle, ShieldCheckIcon } from './Icons';
 import { HeroWelcomeMascotBadge } from './MojoMascot';
@@ -149,12 +150,12 @@ export const HeroTeamShowcase: React.FC<HeroTeamShowcaseProps> = ({
         <picture>
           <source
             media="(max-width: 640px)"
-            srcSet={photos.primary.webpMobile}
+            srcSet={withSiteBasePath(photos.primary.webpMobile)}
             type="image/webp"
           />
-          <source srcSet={photos.primary.webp} type="image/webp" />
+          <source srcSet={withSiteBasePath(photos.primary.webp)} type="image/webp" />
           <img
-            src={photos.primary.src}
+            src={withSiteBasePath(photos.primary.src)}
             alt={photos.primary.alt}
             width={1080}
             height={1440}
@@ -178,9 +179,9 @@ export const HeroTeamShowcase: React.FC<HeroTeamShowcaseProps> = ({
       <div className="hero-bento-subgrid">
         <figure className="hero-bento-subcard">
           <picture>
-            <source srcSet={photos.sub1.src} type="image/webp" />
+            <source srcSet={withSiteBasePath(photos.sub1.src)} type="image/webp" />
             <img
-              src={photos.sub1.fallback}
+              src={withSiteBasePath(photos.sub1.fallback)}
               alt={photos.sub1.alt}
               width={640}
               height={853}
@@ -197,9 +198,9 @@ export const HeroTeamShowcase: React.FC<HeroTeamShowcaseProps> = ({
 
         <figure className="hero-bento-subcard">
           <picture>
-            <source srcSet={photos.sub2.src} type="image/webp" />
+            <source srcSet={withSiteBasePath(photos.sub2.src)} type="image/webp" />
             <img
-              src={photos.sub2.fallback}
+              src={withSiteBasePath(photos.sub2.fallback)}
               alt={photos.sub2.alt}
               width={640}
               height={853}

@@ -7,7 +7,12 @@ import { SiteFooter } from './components/SiteFooter';
 import { SiteHeader } from './components/SiteHeader';
 import type { LocationId } from './data/entities';
 import { LOCATIONS_BY_ID } from './data/locations-data';
-import { normalizeRoutePath, resolvePageByPath } from './data/page-registry';
+import {
+  getSiteBasePath,
+  normalizeRoutePath,
+  resolvePageByPath,
+  withSiteBasePath,
+} from './data/page-registry';
 import { SERVICE_LOCATIONS_DATA } from './data/service-locations-data';
 import { SERVICES_BY_ID } from './data/services-data';
 import { recordOrganicLandingSession } from './erp/service-boundary';
@@ -70,7 +75,11 @@ export const App: React.FC<AppProps> = ({ initialPath }) => {
       setCurrentPath(resolved.redirectTo);
       if (typeof window !== 'undefined') {
         try {
-          window.history.replaceState({ path: resolved.redirectTo }, '', resolved.redirectTo);
+          window.history.replaceState(
+            { path: resolved.redirectTo },
+            '',
+            withSiteBasePath(resolved.redirectTo)
+          );
         } catch {
           // Ignore sandboxed history errors
         }
@@ -95,7 +104,8 @@ export const App: React.FC<AppProps> = ({ initialPath }) => {
 
     if (typeof window !== 'undefined') {
       try {
-        const nextUrl = `${nextPath}${nextSearch}${hashPart ? `#${hashPart}` : ''}`;
+        const nextBrowserPath = withSiteBasePath(nextPath);
+        const nextUrl = `${nextBrowserPath}${nextSearch}${hashPart ? `#${hashPart}` : ''}`;
         window.history.pushState({ path: nextPath }, '', nextUrl);
       } catch {
         // Ignore history pushState restriction in sandboxed contexts
@@ -113,6 +123,56 @@ export const App: React.FC<AppProps> = ({ initialPath }) => {
       }
     }
   };
+
+  // Automatically prefix root-relative assets & links when hosted under GitHub Pages subpath (/Mojo-Cleaning-)
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    const base = getSiteBasePath();
+    if (!base) return;
+
+    const rewriteSubpathUrls = () => {
+      document.querySelectorAll<HTMLImageElement>('img[src^="/"]').forEach((img) => {
+        const raw = img.getAttribute('src');
+        if (raw) {
+          const updated = withSiteBasePath(raw);
+          if (updated !== raw) img.setAttribute('src', updated);
+        }
+      });
+      document.querySelectorAll<HTMLSourceElement>('source[srcset^="/"]').forEach((source) => {
+        const raw = source.getAttribute('srcset');
+        if (raw) {
+          const updated = withSiteBasePath(raw);
+          if (updated !== raw) source.setAttribute('srcset', updated);
+        }
+      });
+      document.querySelectorAll<HTMLAnchorElement>('a[href^="/"]').forEach((anchor) => {
+        const raw = anchor.getAttribute('href');
+        if (raw) {
+          const updated = withSiteBasePath(raw);
+          if (updated !== raw) anchor.setAttribute('href', updated);
+        }
+      });
+      document
+        .querySelectorAll<HTMLLinkElement>('link[rel*="icon"][href^="/"], link[rel="preload"][href^="/"]')
+        .forEach((link) => {
+          const raw = link.getAttribute('href');
+          if (raw) {
+            const updated = withSiteBasePath(raw);
+            if (updated !== raw) link.setAttribute('href', updated);
+          }
+        });
+    };
+
+    rewriteSubpathUrls();
+    const observer = new MutationObserver(() => rewriteSubpathUrls());
+    observer.observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['src', 'srcset', 'href'],
+    });
+    return () => observer.disconnect();
+  }, [currentPath]);
 
   // Sync browser history back/forward + intercept internal route links for clean SPA + SSR experience
   useEffect(() => {

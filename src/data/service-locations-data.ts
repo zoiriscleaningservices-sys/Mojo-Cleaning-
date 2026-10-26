@@ -61,9 +61,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Available Monday – Friday (8:00 AM – 6:00 PM) and Saturdays by appointment across all Huntsville ZIP codes (35801–35811).',
     image: {
-      src: '/images/service-recurring.jpg',
-      webp: '/images/service-recurring.webp',
-      webpMobile: '/images/service-recurring-640w.webp',
+      src: '/images/team-living-room.jpg',
+      webp: '/images/team-living-room.webp',
+      webpMobile: '/images/team-living-room-640w.webp',
       alt: 'Freshly cleaned Huntsville living room with hardwood floors after bi-weekly recurring cleaning',
       width: 1280,
       height: 714,
@@ -163,9 +163,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'One-time Deep Cleans and Kickoff Deep Cleans are available Monday – Friday across Huntsville (35801–35811).',
     image: {
-      src: '/images/service-deep.jpg',
-      webp: '/images/service-deep.webp',
-      webpMobile: '/images/service-deep-640w.webp',
+      src: '/images/team-pendant-care.jpg',
+      webp: '/images/team-pendant-care.webp',
+      webpMobile: '/images/team-pendant-care-640w.webp',
       alt: 'Deep cleaned master bathroom with frameless glass shower and brass fixtures in Huntsville, AL',
       width: 1280,
       height: 714,
@@ -266,9 +266,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Available across all Huntsville ZIP codes; book 5–10 days before closing for preferred arrival windows.',
     image: {
-      src: '/images/service-move.jpg',
-      webp: '/images/service-move.webp',
-      webpMobile: '/images/service-move-640w.webp',
+      src: '/images/team-cabinet-detail.jpg',
+      webp: '/images/team-cabinet-detail.webp',
+      webpMobile: '/images/team-cabinet-detail-640w.webp',
       alt: 'Vacant Huntsville home interior with spotless oak floors and sanitized kitchen cabinets ready for move-in',
       width: 1280,
       height: 714,
@@ -467,9 +467,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Available across Huntsville (35801–35811); schedule once sanding, painting, and grouting are complete.',
     image: {
-      src: '/images/service-post-construction.jpg',
-      webp: '/images/service-post-construction.webp',
-      webpMobile: '/images/service-post-construction-640w.webp',
+      src: '/images/team-post-construction.jpg',
+      webp: '/images/team-post-construction.webp',
+      webpMobile: '/images/team-post-construction-640w.webp',
       alt: 'Newly renovated kitchen in Huntsville, AL with oak cabinets and quartz counters after post-construction cleaning',
       width: 1280,
       height: 714,
@@ -572,9 +572,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Weekly, bi-weekly, and monthly slots available Monday – Friday across 35756, 35757, and 35758.',
     image: {
-      src: '/images/service-recurring.jpg',
-      webp: '/images/service-recurring.webp',
-      webpMobile: '/images/service-recurring-640w.webp',
+      src: '/images/team-living-room.jpg',
+      webp: '/images/team-living-room.webp',
+      webpMobile: '/images/team-living-room-640w.webp',
       alt: 'Pristine family living room in Madison, AL after a bi-weekly recurring clean by Mojo Cleaning',
       width: 1280,
       height: 714,
@@ -674,9 +674,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Available across Madison ZIP codes 35756, 35757, and 35758 Monday – Friday and Saturdays by appointment.',
     image: {
-      src: '/images/service-deep.jpg',
-      webp: '/images/service-deep.webp',
-      webpMobile: '/images/service-deep-640w.webp',
+      src: '/images/team-pendant-care.jpg',
+      webp: '/images/team-pendant-care.webp',
+      webpMobile: '/images/team-pendant-care-640w.webp',
       alt: 'Spotless master bathroom in a Madison, AL home after a 47-point Mojo Deep Clean',
       width: 1280,
       height: 714,
@@ -777,9 +777,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Available across Madison ZIP codes 35756, 35757, and 35758 Monday – Friday and Saturdays by appointment.',
     image: {
-      src: '/images/service-move.jpg',
-      webp: '/images/service-move.webp',
-      webpMobile: '/images/service-move-640w.webp',
+      src: '/images/team-cabinet-detail.jpg',
+      webp: '/images/team-cabinet-detail.webp',
+      webpMobile: '/images/team-cabinet-detail-640w.webp',
       alt: 'Empty sunlit kitchen and hardwood floors in a Madison, AL home ready for move-in day',
       width: 1280,
       height: 714,
@@ -878,9 +878,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Serving all Madison ZIP codes (35756, 35757, 35758) for Move-Out and property turnover appointments.',
     image: {
-      src: '/images/service-move.jpg',
-      webp: '/images/service-move.webp',
-      webpMobile: '/images/service-move-640w.webp',
+      src: '/images/team-cabinet-detail.jpg',
+      webp: '/images/team-cabinet-detail.webp',
+      webpMobile: '/images/team-cabinet-detail-640w.webp',
       alt: 'Vacant Madison, AL home with spotless kitchen cabinets and hardwood floors after move-out cleaning',
       width: 1280,
       height: 714,
@@ -980,9 +980,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Available across Madison ZIP codes 35756, 35757, and 35758 Monday – Friday and Saturdays by appointment.',
     image: {
-      src: '/images/service-post-construction.jpg',
-      webp: '/images/service-post-construction.webp',
-      webpMobile: '/images/service-post-construction-640w.webp',
+      src: '/images/team-post-construction.jpg',
+      webp: '/images/team-post-construction.webp',
+      webpMobile: '/images/team-post-construction-640w.webp',
       alt: 'Newly built open-concept kitchen in Madison, AL after post-construction detailing',
       width: 1280,
       height: 714,
@@ -1084,9 +1084,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Weekly, bi-weekly, and monthly recurring routes operate across Hampton Cove (35763) Monday – Friday.',
     image: {
-      src: '/images/hero-interior.jpg',
-      webp: '/images/hero-interior.webp',
-      webpMobile: '/images/hero-interior-640w.webp',
+      src: '/images/team-living-room.jpg',
+      webp: '/images/team-living-room.webp',
+      webpMobile: '/images/team-living-room-640w.webp',
       alt: 'Spacious open-concept living room and kitchen in Hampton Cove, AL cared for by Mojo Cleaning',
       width: 1280,
       height: 714,
@@ -1287,9 +1287,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Available across Hampton Cove and McMullen Cove (35763) Monday – Friday and Saturdays by appointment.',
     image: {
-      src: '/images/service-move.jpg',
-      webp: '/images/service-move.webp',
-      webpMobile: '/images/service-move-640w.webp',
+      src: '/images/team-cabinet-detail.jpg',
+      webp: '/images/team-cabinet-detail.webp',
+      webpMobile: '/images/team-cabinet-detail-640w.webp',
       alt: 'Empty custom kitchen and hardwood floors in Hampton Cove, AL sanitized for move-in',
       width: 1280,
       height: 714,
@@ -1488,9 +1488,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Available across Hampton Cove and McMullen Cove (35763) for homeowners, interior designers, and custom builders.',
     image: {
-      src: '/images/service-post-construction.jpg',
-      webp: '/images/service-post-construction.webp',
-      webpMobile: '/images/service-post-construction-640w.webp',
+      src: '/images/team-post-construction.jpg',
+      webp: '/images/team-post-construction.webp',
+      webpMobile: '/images/team-post-construction-640w.webp',
       alt: 'Custom remodeled kitchen in Hampton Cove, AL after post-construction dust detailing',
       width: 1280,
       height: 714,
@@ -1592,9 +1592,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Available Monday – Friday (8:00 AM – 6:00 PM) and Saturdays by appointment across Owens Cross Roads (35763).',
     image: {
-      src: '/images/service-recurring.jpg',
-      webp: '/images/service-recurring.webp',
-      webpMobile: '/images/service-recurring-640w.webp',
+      src: '/images/team-living-room.jpg',
+      webp: '/images/team-living-room.webp',
+      webpMobile: '/images/team-living-room-640w.webp',
       alt: 'Clean, sunlit living room in Owens Cross Roads, AL maintained with bi-weekly recurring cleaning',
       width: 1280,
       height: 714,
@@ -1693,9 +1693,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Available across Owens Cross Roads (35763) Monday – Friday and Saturdays by appointment.',
     image: {
-      src: '/images/service-deep.jpg',
-      webp: '/images/service-deep.webp',
-      webpMobile: '/images/service-deep-640w.webp',
+      src: '/images/team-pendant-care.jpg',
+      webp: '/images/team-pendant-care.webp',
+      webpMobile: '/images/team-pendant-care-640w.webp',
       alt: 'Gleaming master bathroom in Owens Cross Roads, AL after a 47-point Deep Clean',
       width: 1280,
       height: 714,
@@ -1795,9 +1795,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Serving all of Owens Cross Roads (35763) Monday – Friday and Saturdays by appointment.',
     image: {
-      src: '/images/service-move.jpg',
-      webp: '/images/service-move.webp',
-      webpMobile: '/images/service-move-640w.webp',
+      src: '/images/team-cabinet-detail.jpg',
+      webp: '/images/team-cabinet-detail.webp',
+      webpMobile: '/images/team-cabinet-detail-640w.webp',
       alt: 'Empty sunlit home interior in Owens Cross Roads, AL sanitized for move-in day',
       width: 1280,
       height: 714,
@@ -2100,9 +2100,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Weekday recurring slots available across Athens (35611, 35613).',
     image: {
-      src: '/images/service-recurring.jpg',
-      webp: '/images/service-recurring.webp',
-      webpMobile: '/images/service-recurring-640w.webp',
+      src: '/images/team-living-room.jpg',
+      webp: '/images/team-living-room.webp',
+      webpMobile: '/images/team-living-room-640w.webp',
       alt: 'Sunlit family living room in Athens, AL cared for on a bi-weekly recurring schedule',
       width: 1280,
       height: 714,
@@ -2201,9 +2201,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Serving Athens ZIP codes 35611 and 35613 Monday – Friday and Saturdays by appointment.',
     image: {
-      src: '/images/service-deep.jpg',
-      webp: '/images/service-deep.webp',
-      webpMobile: '/images/service-deep-640w.webp',
+      src: '/images/team-pendant-care.jpg',
+      webp: '/images/team-pendant-care.webp',
+      webpMobile: '/images/team-pendant-care-640w.webp',
       alt: 'Freshly deep-cleaned master bathroom with marble vanity and glass shower in Athens, AL',
       width: 1280,
       height: 714,
@@ -2303,9 +2303,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Available across Athens ZIP codes 35611 and 35613 Monday – Friday and Saturdays by appointment.',
     image: {
-      src: '/images/service-move.jpg',
-      webp: '/images/service-move.webp',
-      webpMobile: '/images/service-move-640w.webp',
+      src: '/images/team-cabinet-detail.jpg',
+      webp: '/images/team-cabinet-detail.webp',
+      webpMobile: '/images/team-cabinet-detail-640w.webp',
       alt: 'Empty sunlit home interior in Athens, AL freshly sanitized for move-in day',
       width: 1280,
       height: 714,
@@ -2504,9 +2504,9 @@ export const SERVICE_LOCATIONS_DATA: LocationServiceEntity[] = [
     localSchedulingNote:
       'Serving homeowners, custom builders, and realtors across Athens (35611 & 35613).',
     image: {
-      src: '/images/service-post-construction.jpg',
-      webp: '/images/service-post-construction.webp',
-      webpMobile: '/images/service-post-construction-640w.webp',
+      src: '/images/team-post-construction.jpg',
+      webp: '/images/team-post-construction.webp',
+      webpMobile: '/images/team-post-construction-640w.webp',
       alt: 'Newly constructed kitchen in Athens, AL after post-construction dust detailing',
       width: 1280,
       height: 714,

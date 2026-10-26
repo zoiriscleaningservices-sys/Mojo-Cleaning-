@@ -12,6 +12,7 @@ import {
 } from '../components/Icons';
 import { QuoteForm } from '../components/QuoteForm';
 import { LOCATIONS_DATA } from '../data/locations-data';
+import { withSiteBasePath } from '../data/page-registry';
 import { checkZipOrCityCoverage } from '../erp/service-boundary';
 import {
   getAvailableServicesForLocation,
@@ -180,13 +181,13 @@ export const LocationsIndexPage: React.FC = () => {
                         {loc.heroImage.webpMobile ? (
                           <source
                             media="(max-width: 640px)"
-                            srcSet={loc.heroImage.webpMobile}
+                            srcSet={withSiteBasePath(loc.heroImage.webpMobile)}
                             type="image/webp"
                           />
                         ) : null}
-                        <source srcSet={loc.heroImage.webp} type="image/webp" />
+                        <source srcSet={withSiteBasePath(loc.heroImage.webp)} type="image/webp" />
                         <img
-                          src={loc.heroImage.src}
+                          src={withSiteBasePath(loc.heroImage.src)}
                           alt={loc.heroImage.alt}
                           width={loc.heroImage.width}
                           height={loc.heroImage.height}

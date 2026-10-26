@@ -1,6 +1,7 @@
 import React from 'react';
 import { BUSINESS_INFO } from '../config/business';
 import type { LocationId } from '../data/entities';
+import { withSiteBasePath } from '../data/page-registry';
 import {
   buildLocationNavigation,
   getLocationEntity,
@@ -37,9 +38,9 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ activeLocationId }) => {
               aria-label={`Mojo Cleaning ${activeLocation.name} — Return to ${activeLocation.city} homepage`}
             >
               <picture>
-                <source srcSet="/images/mojo-logo.webp" type="image/webp" />
+                <source srcSet={withSiteBasePath('/images/mojo-logo.webp')} type="image/webp" />
                 <img
-                  src="/mojo-logo.png"
+                  src={withSiteBasePath('/mojo-logo.png')}
                   alt="Mojo Cleaning"
                   width={144}
                   height={72}

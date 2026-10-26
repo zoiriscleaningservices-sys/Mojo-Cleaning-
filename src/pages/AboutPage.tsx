@@ -18,6 +18,7 @@ import { HeroTeamShowcase } from '../components/HeroTeamShowcase';
 import { ResidentialServicesSuite } from '../components/ResidentialServicesSuite';
 import { REAL_TEAM_ACTION_GALLERY } from '../data/business-profile';
 import type { LocationEntity } from '../data/entities';
+import { withSiteBasePath } from '../data/page-registry';
 import {
   BRAND_AUTHORITY_EXPERIENCE,
   LOCAL_PARTNERSHIP_RESOURCES,
@@ -237,9 +238,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ location }) => {
               <figure className="about-story-mini-showcase">
                 <div className="about-story-mini-media">
                   <picture>
-                    <source srcSet="/images/team-pendant-care-640w.webp" type="image/webp" />
+                    <source srcSet={withSiteBasePath('/images/team-pendant-care-640w.webp')} type="image/webp" />
                     <img
-                      src="/images/team-pendant-care.jpg"
+                      src={withSiteBasePath('/images/team-pendant-care.jpg')}
                       alt={`Mojo Cleaning specialist polishing glass pendant lighting in ${location.name}`}
                       width={640}
                       height={820}
@@ -418,13 +419,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ location }) => {
                       {photo.webpMobile ? (
                         <source
                           media="(max-width: 640px)"
-                          srcSet={photo.webpMobile}
+                          srcSet={withSiteBasePath(photo.webpMobile)}
                           type="image/webp"
                         />
                       ) : null}
-                      <source srcSet={photo.webp} type="image/webp" />
+                      <source srcSet={withSiteBasePath(photo.webp)} type="image/webp" />
                       <img
-                        src={photo.image}
+                        src={withSiteBasePath(photo.image)}
                         alt={photo.alt}
                         width={photo.width}
                         height={photo.height}

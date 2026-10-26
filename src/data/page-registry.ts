@@ -26,8 +26,39 @@ import {
 
 export const SITE_ORIGIN = 'https://mojocleaningservice.com';
 
+export function getSiteBasePath(): string {
+  if (typeof window !== 'undefined') {
+    const match = window.location.pathname.match(/^(\/Mojo-Cleaning-)(?=\/|$)/i);
+    if (match) {
+      return match[1];
+    }
+  }
+  return '';
+}
+
+export function withSiteBasePath(routeOrAssetPath: string): string {
+  if (!routeOrAssetPath || !routeOrAssetPath.startsWith('/')) {
+    return routeOrAssetPath;
+  }
+  const base = getSiteBasePath();
+  if (!base) {
+    return routeOrAssetPath;
+  }
+  const lowerPath = routeOrAssetPath.toLowerCase();
+  const lowerBase = base.toLowerCase();
+  if (lowerPath === lowerBase || lowerPath.startsWith(`${lowerBase}/`)) {
+    return routeOrAssetPath;
+  }
+  return `${base}${routeOrAssetPath}`;
+}
+
 export function normalizeRoutePath(rawPath: string): string {
-  const withoutHashOrQuery = rawPath.split('#')[0].split('?')[0].trim();
+  const withoutHashOrQuery = rawPath
+    .split('#')[0]
+    .split('?')[0]
+    .trim()
+    .replace(/^\/Mojo-Cleaning-(?=\/|$)/i, '')
+    .replace(/\/index\.html$/i, '');
   if (!withoutHashOrQuery || withoutHashOrQuery === '/') {
     return '/';
   }
@@ -97,7 +128,7 @@ function buildOrganizationSchema(activeLoc?: LocationEntity): Record<string, unk
       width: 500,
       height: 250,
     },
-    image: `${SITE_ORIGIN}/images/hero-interior.jpg`,
+    image: `${SITE_ORIGIN}/images/team-living-room.jpg`,
     telephone: VERIFIED_BUSINESS_PROFILE.telephoneE164.value,
     email: VERIFIED_BUSINESS_PROFILE.email.value,
     description: activeLoc

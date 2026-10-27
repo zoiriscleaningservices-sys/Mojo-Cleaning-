@@ -261,9 +261,12 @@ async function runPrerender() {
   fs.writeFileSync(path.join(distDir, '_redirects'), redirectsContent, 'utf-8');
   fs.writeFileSync(path.join(publicDir, '_redirects'), redirectsContent, 'utf-8');
 
-  // 5. Write .nojekyll so GitHub Pages serves all folders and assets without Jekyll filtering
+  // 5. Write .nojekyll and CNAME so GitHub Pages serves all folders and custom apex domain without redirects
   fs.writeFileSync(path.join(distDir, '.nojekyll'), '', 'utf-8');
   fs.writeFileSync(path.join(rootDir, '.nojekyll'), '', 'utf-8');
+  fs.writeFileSync(path.join(distDir, 'CNAME'), 'mojocleaningservice.com\n', 'utf-8');
+  fs.writeFileSync(path.join(publicDir, 'CNAME'), 'mojocleaningservice.com\n', 'utf-8');
+  fs.writeFileSync(path.join(rootDir, 'CNAME'), 'mojocleaningservice.com\n', 'utf-8');
 
   // 6. Sync compiled static site to repository root so GitHub Pages (main branch / root) serves live immediately
   const rootStaticDirsToClean = [
